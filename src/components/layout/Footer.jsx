@@ -1,6 +1,4 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Instagram, Facebook, MapPin, Phone, Mail } from 'lucide-react';
+import { Instagram, Share2, MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -24,7 +22,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-6 items-center">
                <a href="#" className="text-pearl-white/40 hover:text-sierra-gold transition-colors"><Instagram size={20} /></a>
-               <a href="#" className="text-pearl-white/40 hover:text-sierra-gold transition-colors"><Facebook size={20} /></a>
+               <a href="#" className="text-pearl-white/40 hover:text-sierra-gold transition-colors"><Share2 size={20} /></a>
             </div>
           </div>
 
