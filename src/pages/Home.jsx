@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Hero from '../components/home/Hero';
 import InteractiveMenu from '../components/home/InteractiveMenu';
 import ServicesSection from '../components/home/ServicesSection';
