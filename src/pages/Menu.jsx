@@ -170,7 +170,7 @@ export default function Menu({ onReserve }) {
     });
     
     orderText += `%0A*Total Estimado:* ${total.toFixed(2)}€%0A%0A¿Cuál sería el tiempo aproximado para pasar a por ello?%0A%0A¡Muchas gracias! ✨`;
-    window.open(`https://wa.me/34684790308?text=${orderText}`, '_blank');
+    window.open(`https://wa.me/34616600772?text=${orderText}`, '_blank');
     setCart({});
   };
 
