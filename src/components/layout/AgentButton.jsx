@@ -6,7 +6,7 @@ export default function AgentButton() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const startWhatsApp = () => {
-    const phone = "34684790308";
+    const phone = "34616600772";
     const message = encodeURIComponent("Hola, me gustaría solicitar una reserva para una experiencia gastronómica en ENCAPACO.");
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   };

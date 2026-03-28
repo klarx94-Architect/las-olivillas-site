@@ -120,11 +120,11 @@ export default function BookingAgent({ isOpen, onClose }) {
 
   const handleWhatsApp = () => {
     const message = `*Reserva Confirmada - ENCAPACO*%0A%0A📅 *Fecha:* ${booking.date}%0A⏰ *Hora:* ${booking.time}%0A👥 *Pax:* ${booking.adults}%0A📍 *Zona:* ${booking.area.toUpperCase()}%0A👤 *Cliente:* ${booking.name}%0A📞 *Tel:* ${booking.phone}%0A%0A_Digital Host via ENCAPACO_`;
-    window.open(`https://wa.me/34684790308?text=${message}`, '_blank');
+    window.open(`https://wa.me/34616600772?text=${message}`, '_blank');
   };
 
   const handleWhatsAppDirect = () => {
-    window.open(`https://wa.me/34684790308?text=Hola,%20me%20gustaría%20hacer%20una%20consulta%20directa%20sobre%20reservas.`, '_blank');
+    window.open(`https://wa.me/34616600772?text=Hola,%20me%20gustaría%20hacer%20una%20consulta%20directa%20sobre%20reservas.`, '_blank');
   };
 
   return (
