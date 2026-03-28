@@ -25,10 +25,10 @@ const VIBES = [
 export default function ServicesSection() {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: targetRef });
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-neutral-dark">
+    <section ref={targetRef} className="relative h-[450vh] bg-neutral-dark">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         {/* Architectural Background Text */}
         <div className="absolute top-10 left-10 z-0">
