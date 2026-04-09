@@ -1,24 +1,62 @@
+# AGENTS.md — Restaurante Las Olivillas
+
+## Identidad del Proyecto
+- **Cliente:** Restaurante Las Olivillas
+- **Propietarios:** Jose Castillo Medina y María García Castillo
+- **Dirección:** Paseo Mirasierra nº7, Güéjar Sierra, Granada
+- **Teléfono reservas:** 653 999 909
+- **Teléfono fijo:** 958 484 050
+- **Email:** restaurantelasolivillas@hotmail.es
+- **Horario:** Miércoles a Lunes 12:00-16:00 / 20:00-00:00 · Martes cerrado
+- **Dominio:** lasolivillas.es
+- **Repo GitHub:** klarx94-Architect/en-que-paco (conectado a Vercel proyecto en-que-paco-site)
+- **Framework:** Vite + React + Tailwind CSS
+
+## Paleta de Colores — Las Olivillas
+- Verde oliva oscuro: `#3D5A3E`
+- Crema cálida: `#F5F0E8`
+- Dorado suave: `#C8A96E`
+- Negro texto: `#1A1A1A`
+- Blanco puro: `#FFFFFF`
+
+## Instrucciones para Agentes IA
+- Este proyecto es EXCLUSIVO para Restaurante Las Olivillas. No mezclar con encapaco ni otros proyectos.
+- Toda referencia a "Encapaco", "ENCAPACO", "En Que Paco" debe eliminarse y reemplazarse por "Las Olivillas".
+- El WhatsApp de reservas es: `653 999 909` → formato wa.me: `https://wa.me/34653999909`
+- El sistema de reservas NO es un chatbot conversacional. Es un formulario inteligente que notifica al dueño por WhatsApp.
+- La sección `/admin-olivillas` es el panel de gestión privado conectado a Supabase.
+- El dominio de producción es `lasolivillas.es` — apunta al proyecto Vercel `en-que-paco-site`.
+
+## Estructura del Proyecto
+```
+src/
+  App.jsx                          # Router principal
+  components/
+    home/
+      Hero.jsx                     # Sección hero principal
+      BookingAgent.jsx             # Agente de reservas (formulario inteligente)
+      InteractiveMenu.jsx          # Carta interactiva por categorías
+      DigitalMenu.jsx              # Menú digital
+      ServicesSection.jsx          # Sección servicios
+      EventCard.jsx                # Tarjeta eventos
+    layout/                        # Navbar, Footer
+  pages/                           # Páginas de rutas
+  lib/                             # Utilidades y config Supabase
+```
+
+## Variables de Entorno Requeridas
+```
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+VITE_WA_NUMBER=34653999909
+```
+
 <!-- VERCEL BEST PRACTICES START -->
 ## Best practices for developing on Vercel
 
-These defaults are optimized for AI coding agents (and humans) working on apps that deploy to Vercel.
-
-- Treat Vercel Functions as stateless + ephemeral (no durable RAM/FS, no background daemons), use Blob or marketplace integrations for preserving state
-- Edge Functions (standalone) are deprecated; prefer Vercel Functions
-- Don't start new projects on Vercel KV/Postgres (both discontinued); use Marketplace Redis/Postgres instead
-- Store secrets in Vercel Env Variables; not in git or `NEXT_PUBLIC_*`
-- Provision Marketplace native integrations with `vercel integration add` (CI/agent-friendly)
-- Sync env + project settings with `vercel env pull` / `vercel pull` when you need local/offline parity
-- Use `waitUntil` for post-response work; avoid the deprecated Function `context` parameter
-- Set Function regions near your primary data source; avoid cross-region DB/service roundtrips
-- Tune Fluid Compute knobs (e.g., `maxDuration`, memory/CPU) for long I/O-heavy calls (LLMs, APIs)
-- Use Runtime Cache for fast **regional** caching + tag invalidation (don't treat it as global KV)
-- Use Cron Jobs for schedules; cron runs in UTC and triggers your production URL via HTTP GET
-- Use Vercel Blob for uploads/media; Use Edge Config for small, globally-read config
-- If Enable Deployment Protection is enabled, use a bypass secret to directly access them
-- Add OpenTelemetry via `@vercel/otel` on Node; don't expect OTEL support on the Edge runtime
+- Treat Vercel Functions as stateless + ephemeral
+- Store secrets in Vercel Env Variables; not in git
+- Use `vercel env pull` for local parity
+- Use Vercel Blob for uploads/media
 - Enable Web Analytics + Speed Insights early
-- Use AI Gateway for model routing, set AI_GATEWAY_API_KEY, using a model string (e.g. 'anthropic/claude-sonnet-4.6'), Gateway is already default in AI SDK
-  needed. Always curl https://ai-gateway.vercel.sh/v1/models first; never trust model IDs from memory
-- For durable agent loops or untrusted code: use Workflow (pause/resume/state) + Sandbox; use Vercel MCP for secure infra access
 <!-- VERCEL BEST PRACTICES END -->
