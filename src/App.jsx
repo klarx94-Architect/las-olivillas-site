@@ -4,7 +4,6 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import BookingAgent from './components/home/BookingAgent';
 import ScrollToTop from './components/layout/ScrollToTop';
-import { Smartphone } from 'lucide-react';
 
 // Pages
 import Home from './pages/Home';
@@ -19,7 +18,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <div className="bg-pearl-white min-h-screen text-neutral-dark selection:bg-terracotta-deep selection:text-white antialiased">
-        {/* Scroll-triggered grain overlay (Senior detail) */}
+        {/* Grain overlay */}
         <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[200] contrast-150 grayscale mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
 
         <Navbar onReserve={() => setIsBookingOpen(true)} />
@@ -39,7 +38,7 @@ function App() {
         
         {/* Floating WhatsApp Button */}
         <a 
-          href="https://wa.me/34616600772?text=Hola,%20me%20gustaría%20solicitar%20información%20sobre%20ENCAPACO."
+          href="https://wa.me/34653999909?text=Hola,%20me%20gustar%C3%ADa%20hacer%20una%20reserva%20en%20Las%20Olivillas."
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-8 right-8 z-[200] bg-[#25D366] text-white p-5 rounded-full shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_15px_40px_rgba(37,211,102,0.6)] transition-all duration-500 overflow-hidden group flex items-center justify-center"

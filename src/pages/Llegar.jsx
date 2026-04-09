@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Navigation2 } from 'lucide-react';
+import { MapPin, Navigation2, Phone, Clock } from 'lucide-react';
 
 export default function Llegar() {
   return (
@@ -17,16 +17,44 @@ export default function Llegar() {
           <span className="italic font-normal text-terracotta-mid">camino.</span>
         </h1>
         <p className="text-neutral-dark/60 font-serif italic text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
-          "Todas las buenas historias comienzan con un viaje. Te esperamos en el corazón de Güéjar Sierra para compartir la nuestra."
+          "Todas las buenas historias comienzan con un viaje. Te esperamos en Paseo Mirasierra nº7, Güéjar Sierra, para compartir la nuestra."
         </p>
+      </div>
+
+      {/* Info Cards */}
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="bg-white rounded-3xl p-8 shadow-sm border border-black/5 flex items-start gap-4">
+          <MapPin size={20} className="text-sierra-gold shrink-0 mt-1" />
+          <div>
+            <h4 className="font-black uppercase tracking-widest text-[10px] text-neutral-dark/40 mb-2">Dirección</h4>
+            <p className="font-serif font-black text-neutral-dark">Paseo Mirasierra nº7</p>
+            <p className="font-serif italic text-neutral-dark/60 text-sm">18160 Güéjar Sierra, Granada</p>
+          </div>
+        </div>
+        <div className="bg-white rounded-3xl p-8 shadow-sm border border-black/5 flex items-start gap-4">
+          <Phone size={20} className="text-sierra-gold shrink-0 mt-1" />
+          <div>
+            <h4 className="font-black uppercase tracking-widest text-[10px] text-neutral-dark/40 mb-2">Reservas</h4>
+            <a href="tel:+34653999909" className="font-serif font-black text-neutral-dark hover:text-terracotta-mid transition-colors block">653 999 909</a>
+            <a href="tel:+34958484050" className="font-serif italic text-neutral-dark/60 text-sm hover:text-terracotta-mid transition-colors block">958 484 050</a>
+          </div>
+        </div>
+        <div className="bg-white rounded-3xl p-8 shadow-sm border border-black/5 flex items-start gap-4">
+          <Clock size={20} className="text-sierra-gold shrink-0 mt-1" />
+          <div>
+            <h4 className="font-black uppercase tracking-widest text-[10px] text-neutral-dark/40 mb-2">Horario</h4>
+            <p className="font-serif font-black text-neutral-dark">Miérc. – Lunes</p>
+            <p className="font-serif italic text-neutral-dark/60 text-sm">12:00–16:00 · 20:00–00:00</p>
+            <p className="text-terracotta-mid font-bold text-[10px] uppercase tracking-widest mt-1">Martes cerrado</p>
+          </div>
+        </div>
       </div>
 
       <div className="max-w-[1200px] mx-auto bg-white rounded-[3rem] p-4 md:p-8 shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-black/5">
         <div className="relative w-full h-[400px] md:h-[600px] rounded-[2rem] overflow-hidden bg-neutral-100 flex items-center justify-center isolate">
-          {/* Map Premium Frame Overlay */}
           <div className="absolute inset-0 pointer-events-none border-8 border-white rounded-[2rem] z-10" />
           <iframe 
-            src="https://maps.google.com/maps?q=En%20Que%20Paco,%20G%C3%BC%C3%A9jar%20Sierra,%20Granada&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+            src="https://maps.google.com/maps?q=Restaurante%20Las%20Olivillas,%20Paseo%20Mirasierra%207,%20G%C3%BC%C3%A9jar%20Sierra,%20Granada&t=&z=16&ie=UTF8&iwloc=&output=embed" 
             className="w-full h-full border-0 absolute inset-0 z-0 opacity-90 hue-rotate-15 contrast-125"
             allowFullScreen="" 
             loading="lazy"
@@ -41,12 +69,12 @@ export default function Llegar() {
             </div>
             <div className="text-left">
               <h3 className="font-serif font-black text-2xl text-neutral-dark mb-1">Güéjar Sierra</h3>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-dark/40">Granada, Andalucía</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-dark/40">Paseo Mirasierra nº7, Granada</p>
             </div>
           </div>
           
           <a 
-            href="https://maps.google.com/maps?daddr=En+Que+Paco,+Guejar+Sierra,+Granada"
+            href="https://maps.google.com/maps?daddr=Paseo+Mirasierra+7,+Guejar+Sierra,+Granada"
             target="_blank"
             rel="noopener noreferrer"
             className="group w-full md:w-auto flex items-center justify-center gap-4 bg-terracotta-mid text-white px-10 md:px-12 py-6 rounded-full font-black uppercase tracking-[0.3em] text-[10px] hover:bg-neutral-dark transition-all duration-500 shadow-xl hover:shadow-2xl"

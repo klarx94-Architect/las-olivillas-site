@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Utensils, Music, Globe, Phone, Menu, X } from 'lucide-react';
+import { Utensils, Globe, Phone, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '../../lib/utils';
 
-const Logo = ({ isScrolled }) => (
+const Logo = () => (
   <motion.div 
     initial={{ opacity: 0, x: -20 }}
     animate={{ opacity: 1, x: 0 }}
   >
     <Link to="/" className="flex items-center gap-4 group no-underline">
-      <img 
-        src="/assets/bar_tapas/group-4-2814581.png" 
-        alt="ENCAPACO Logo" 
-        className="h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
-      />
+      <span className="text-2xl font-serif font-black tracking-tight text-neutral-dark group-hover:text-sierra-gold transition-colors">
+        Las <span className="italic font-normal text-terracotta-mid">Olivillas</span>
+      </span>
     </Link>
   </motion.div>
 );
@@ -31,7 +29,6 @@ export default function Navbar({ onReserve }) {
 
   const navLinks = [
     { name: 'Nuestro Menú', href: '/menu', icon: <Utensils size={14} /> },
-    { name: 'Ritmo', href: '/#services', icon: <Music size={14} /> },
     { name: 'Nosotros', href: '/nosotros', icon: <Globe size={14} /> },
     { name: 'Llegar', href: '/llegar', icon: <Phone size={14} /> },
   ];
@@ -42,7 +39,7 @@ export default function Navbar({ onReserve }) {
       isScrolled ? "bg-pearl-white/80 backdrop-blur-2xl py-4 border-b border-black/5" : "bg-transparent"
     )}>
       <div className="max-w-[1600px] mx-auto flex justify-between items-center">
-        <Logo isScrolled={isScrolled} />
+        <Logo />
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-12">
@@ -83,7 +80,7 @@ export default function Navbar({ onReserve }) {
         </button>
       </div>
 
-      {/* Mobile Curtain Menu (Luxe Version) */}
+      {/* Mobile Curtain Menu */}
       <AnimatePresence>
         {isMobileOpen && (
           <motion.div
@@ -122,18 +119,14 @@ export default function Navbar({ onReserve }) {
                </motion.button>
             </div>
 
-            {/* Mobile Menu Footer Info */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
               className="p-12 border-t border-black/5 flex flex-col items-center text-center gap-4 bg-white/50"
             >
-               <p className="font-serif italic text-neutral-dark/40 text-sm">Güéjar Sierra, Granada.</p>
-               <div className="flex gap-6 mt-2 opacity-30">
-                  <div className="w-10 h-10 rounded-full border border-black flex items-center justify-center"><Phone size={14} /></div>
-                  <div className="w-10 h-10 rounded-full border border-black flex items-center justify-center"><Globe size={14} /></div>
-               </div>
+               <p className="font-serif italic text-neutral-dark/40 text-sm">Paseo Mirasierra nº7, Güéjar Sierra.</p>
+               <p className="font-bold text-neutral-dark/60 text-sm tracking-widest">653 999 909</p>
             </motion.div>
           </motion.div>
         )}
